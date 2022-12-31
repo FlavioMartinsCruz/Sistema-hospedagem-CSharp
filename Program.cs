@@ -24,5 +24,7 @@ reserva.CadastrarHospedes(hospedes);
 
 // Exibe a quantidade de hóspedes e o valor da diária
 Console.Clear();
+Console.WriteLine("RESUMO DA FATURA\n");
+string desconto = (reserva.DiasReservados >= 10 ? " << 10% de desconto >>" : "");
 Console.WriteLine($"Quantidade de hóspedes: {reserva.ObterQuantidadeHospedes()}");
-Console.WriteLine($"Valor diária: {reserva.CalcularValorDiaria()}");
+Console.WriteLine($"Valor a pagar: {reserva.CalcularValorDiaria().ToString("C")} ({reserva.DiasReservados} dias x {suite.ValorDiaria.ToString("C")})" + desconto + "\n");
